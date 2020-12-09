@@ -35,6 +35,8 @@
 	* Easy to test Rest api
 * Python3
 	* For the fun of it
+* Json
+	* Standard reply back to the client
 
 
 
