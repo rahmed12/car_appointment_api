@@ -45,8 +45,7 @@
 
 * Start Postman and import the file __appts_api.postman_collection.json__
 	* you should have a new collection called appts api
-	
-	* ![1_postman](https://user-images.githubusercontent.com/47451663/101697730-569a3300-3a46-11eb-9750-67a7b6a37e5e.PNG)
+
 
 
 
