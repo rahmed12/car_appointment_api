@@ -45,11 +45,8 @@
 
 * Start Postman and import the file __appts_api.postman_collection.json__
 	* you should have a new collection called appts api
-	![1_postman](https://user-images.githubusercontent.com/47451663/101697730-569a3300-3a46-11eb-9750-67a7b6a37e5e.PNG)
-	* If you expand the collection you should have tow entries called auth and appts
-	![2_postman](https://user-images.githubusercontent.com/47451663/101698259-328b2180-3a47-11eb-9d04-a761eb8d4c78.PNG)
-	* If you expand those folders you will see the endpoint
-	![3_postman](https://user-images.githubusercontent.com/47451663/101698215-21daab80-3a47-11eb-8c74-5f1f2f3a68f0.PNG)
+	
+	* ![1_postman](https://user-images.githubusercontent.com/47451663/101697730-569a3300-3a46-11eb-9750-67a7b6a37e5e.PNG)
 
 
 
