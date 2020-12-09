@@ -1,11 +1,56 @@
-# Project Name
-> Abstract of the project or small introduction of what the project is about
+# Car appointment api
+> REST API that can store and manage appointments fora car service center.
 <hr>
 
-Prerequisite
-Linux
-Docker
-Postman
+
+
+# Table of Contents
+* [Prerequisite: Make sure you have the follow](#Prerequisite)
+* [Technologies](#Technologies)
+* [Setup](#Setup)
+
+
+
+
+# <a name="Prerequisite"></a>Prerequisite
+* Linux
+* Docker
+* Postman
+
+
+
+
+
+
+# <a name="Technologies"></a>Technologies
+* Docker
+	* To allow easy installation and scaling if needed
+* Flask
+	* To allow quick development of this simple web applications
+* MongoDb
+	* Good for scaling and for model with very little relationships
+* Postman
+	* Easy to test Rest api
+* Python3
+	* For the fun of it
+
+
+
+# <a name="Setup"></a>Setup
+* From the repository https://github.com/rahmed12/car_appointment_api.git get these files and put it on your linux machine (you don't need the whole repository since we are using docker):
+	* __appts_api.postman_collection.json__
+		* This is for Postman
+	* __docker-compose.yaml__
+		* This is for docker
+
+* Start Postman and import the file __appts_api.postman_collection.json__
+	* you should have a new collection called appts api
+	![1_postman](https://user-images.githubusercontent.com/47451663/101697730-569a3300-3a46-11eb-9750-67a7b6a37e5e.PNG)
+	* If you expand the collection you should have tow entries called auth and appts
+	![2_postman](https://user-images.githubusercontent.com/47451663/101698259-328b2180-3a47-11eb-9d04-a761eb8d4c78.PNG)
+	* If you expand those folders you will see the endpoint
+	![3_postman](https://user-images.githubusercontent.com/47451663/101698215-21daab80-3a47-11eb-8c74-5f1f2f3a68f0.PNG)
+
 
 
 
