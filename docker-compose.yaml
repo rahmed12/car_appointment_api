@@ -1,0 +1,27 @@
+version: '3'
+# making two services web -> the car app
+#                     db -> the database
+services:
+  web:
+    image: rasaldocker/carapptapi_web:latest
+    container_name: carapi_web_1
+    build: .
+    ports:
+      - "80:5000"
+    volumes:
+      - ~/mlprojects/car_appt_api:/opt/car_appt_api
+    links:
+      - db:mongodb
+  web_run:
+    image: rasaldocker/carapptapi_web:latest
+    container_name: carapi_web_1
+    ports:
+      - "80:5000"
+    links:
+      - db:mongodb
+  db:
+    image: mongo:3.6.3
+    container_name: carapi_db_1
+    #if you want ot keep the data persistent uncomment below
+    #volumes: ~/mongo/data:/data/db
+
