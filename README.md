@@ -115,7 +115,7 @@
 	* You should be on the mongodb.  To show database:
 		* `show dbs`
 
-	* `To select our database:`
+	* To select our database:
 		* `use appts-api`
 
 	* To see the collections:
