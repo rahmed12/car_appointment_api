@@ -99,7 +99,7 @@
 		* if you run it again it will failure in some place
 		* If you want to rerun again just drop the database (instructions below in extra)
 	* Using unnitest 
- 		* docker exec -it `<container name>_web_run_run_<number>` python test.py
+ 		* docker exec -it `<container name>_web_run_run_<number>` python tests.py
  		* this will report any failures or success from any tests.py files
  		* app_auth/tests.py
 		* appt/tests.py
