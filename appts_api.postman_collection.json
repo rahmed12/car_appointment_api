@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "67d8243a-1aa7-4307-9600-a874dea7a252",
+		"_postman_id": "399a72cb-4d38-4606-879e-2b7f77b11443",
 		"name": "appts api",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -14,7 +14,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "2d16df93-5786-43f2-b461-344afc4c76f8",
+								"id": "cd53e5d8-2a88-4445-beec-31b68a3c78d3",
 								"exec": [
 									"pm.test(\"POST create new credentials status code is 200\", function () {",
 									"    pm.response.to.have.status(200);",
@@ -56,7 +56,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "b51111ab-e077-4cbb-b97d-7b50b3408e9b",
+								"id": "41df9c42-7d31-4a3b-9e40-7977ce5d4f49",
 								"exec": [
 									"pm.test(\"Get token\", function () {",
 									"    let jsonData = pm.response.json();",
@@ -115,7 +115,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "04e61619-fa00-4598-af49-78c04a4bfc67",
+								"id": "e63741ee-25c3-410f-8985-6ddf0a5507e4",
 								"exec": [
 									"pm.test(\"POST record 1 Status code is 201\", function () {",
 									"    pm.response.to.have.status(201);",
@@ -187,7 +187,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "4e19ff9f-6fe3-49a2-ae60-0bdf4a8baa61",
+								"id": "d08fc705-ba6c-4aed-97d4-70d9857d9269",
 								"exec": [
 									"pm.test(\"POST record 2 Status code is 201\", function () {",
 									"    pm.response.to.have.status(201);",
@@ -259,7 +259,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "5cfe3ee5-ec2d-4139-8229-6e9e55c5e3c4",
+								"id": "5df1b1f8-4d57-4b3f-8838-747c7c7acd88",
 								"exec": [
 									"pm.test(\"POST record 3 Status code is 201\", function () {",
 									"    pm.response.to.have.status(201);",
@@ -331,7 +331,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "d38aea11-ce71-4174-979d-5a6f9ec1847d",
+								"id": "ac036666-e82e-4f4c-ac58-3b642e606566",
 								"exec": [
 									"pm.test(\"GET all records Status code is 200\", function () {",
 									"    pm.response.to.have.status(200);",
@@ -392,12 +392,12 @@
 					"response": []
 				},
 				{
-					"name": "GET appts all endpoint date range",
+					"name": "GET appts all endpoint date range sorted by price",
 					"event": [
 						{
 							"listen": "test",
 							"script": {
-								"id": "c0fccb8a-4973-445b-9d4e-33211a01a3ac",
+								"id": "cd75f7e1-d528-4725-8fa0-033e8c22eb60",
 								"exec": [
 									"pm.test(\"GET Date range Status code is 200\", function () {",
 									"    pm.response.to.have.status(200);",
@@ -406,14 +406,27 @@
 									"let response = pm.response.json();",
 									"let numberOfRecs = response.appts.length",
 									"let id = response.appts[0].id",
+									"let price1 = parseFloat(response.appts[0].price)",
+									"let price2 = parseFloat(response.appts[1].price)",
 									"",
-									"pm.test(\"GET date range return only one rec\", function(){",
+									"pm.test(\"GET date range return \" + numberOfRecs +  \" rec within that date range\", function(){",
 									"",
-									"    pm.expect(numberOfRecs).to.equal(1);",
+									"    pm.expect(numberOfRecs).to.equal(2);",
 									"",
 									"});",
 									"",
-									"pm.test(\"Got record: \" + id, function () {",
+									"pm.test(\"GET date range sort by price\", function(){",
+									"",
+									"    pm.expect(price1).lte(price2);",
+									"",
+									"});",
+									"",
+									"pm.test(\"First record has price : \" + response.appts[0].price + \" with date \" + response.appts[0].date, function () {",
+									"   //testscript",
+									"",
+									"});",
+									"",
+									"pm.test(\"Second record has price: \" + response.appts[1].price + \" with date \" + response.appts[1].date, function () {",
 									"   //testscript",
 									"",
 									"});"
@@ -437,7 +450,7 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost/appts/?startdate=2020-11-13&enddate=2020-12-5",
+							"raw": "http://localhost/appts/?startdate=2020-11-11&enddate=2020-12-05",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -449,11 +462,11 @@
 							"query": [
 								{
 									"key": "startdate",
-									"value": "2020-11-13"
+									"value": "2020-11-11"
 								},
 								{
 									"key": "enddate",
-									"value": "2020-12-5"
+									"value": "2020-12-05"
 								}
 							]
 						}
@@ -466,7 +479,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "bb1161ce-b8e3-406a-9be4-00d4155a4ce5",
+								"id": "d07158f8-990f-43c2-9c9b-2285bef69526",
 								"exec": [
 									"pm.test(\"PUT (update status) Status code is 200\", function () {",
 									"    pm.response.to.have.status(200);",
@@ -532,7 +545,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "363fd8bb-e6e4-4b8b-b551-916cf95311ae",
+								"id": "10b288d0-9721-4524-af26-fcca34d5bb21",
 								"exec": [
 									"pm.test(\"DELETE \"  + pm.environment.get('rec1Id') +  \": Status code is 204\", function () {",
 									"    pm.response.to.have.status(204);",
@@ -576,7 +589,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "f59cab55-355c-4cee-9f3a-3a192b56eef0",
+								"id": "6f1738f0-7d83-413b-8cd0-f0cca624525e",
 								"exec": [
 									"pm.test(\"GET all records after delete Status code is 200\", function () {",
 									"    pm.response.to.have.status(200);",
@@ -638,7 +651,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "c9de2816-4f95-4d36-947c-85362bdd3fb4",
+								"id": "33107318-3c9c-4637-bcd6-ed45b0f4e9e6",
 								"exec": [
 									"pm.test(\"GET one records Status code is 200\", function () {",
 									"    pm.response.to.have.status(200);",
