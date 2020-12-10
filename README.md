@@ -41,6 +41,7 @@
 
 
 # <a name="Setup"></a>Setup
+* If you want to watch a video version of this, here is the link [![Car Serive appointment API](https://img.youtube.com/vi/VID/0.jpg)](https://youtu.be/UVpPy3DLpBs)
 * From the repository https://github.com/rahmed12/car_appointment_api.git get these files and put it on your linux machine (you don't need the whole repository since we are using docker):
 	* __appts_api.postman_collection.json__
 		* This is for Postman
