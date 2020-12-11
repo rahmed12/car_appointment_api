@@ -1,3 +1,4 @@
+APScheduler==3.6.3
 attrs==20.3.0
 click==7.1.2
 dnspython==2.0.0
@@ -17,7 +18,10 @@ py-bcrypt==0.4
 pymongo==3.11.2
 pyrsistent==0.17.3
 python-dotenv==0.15.0
+pytz==2020.4
+schedule==0.6.0
 six==1.15.0
+tzlocal==2.1
 Werkzeug==1.0.1
 WTForms==2.3.3
 zipp==3.4.0
