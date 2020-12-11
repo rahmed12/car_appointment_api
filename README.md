@@ -7,6 +7,7 @@
 # Table of Contents
 * [Prerequisite: Make sure you have the follow](#Prerequisite)
 * [Technologies](#Technologies)
+* [Design](#Design)
 * [Setup](#Setup)
 * [Test](#Test)
 * [Extra](#Extra)
@@ -38,6 +39,9 @@
 * Json
 	* Standard reply back to the client
 
+# <a name="Design"></a>Design
+* Simple, and I mean simple flow chart
+![Untitled Diagram](https://user-images.githubusercontent.com/47451663/101845077-c5958b80-3b1b-11eb-8c8f-4ed85de8baa9.png)
 
 
 # <a name="Setup"></a>Setup
