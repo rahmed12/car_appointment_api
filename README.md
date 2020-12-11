@@ -78,7 +78,7 @@
 	* Storage for 10  years: 17G
 
 
-* __4. System APIs__
+* <a name="systemApiSec"></a> __4. System APIs__ 
 	* Generating user's credentials:
 	
  POST body
@@ -257,6 +257,8 @@ There are no relationship
  		* this will report any failures or success from any tests.py files
  		* app_auth/tests.py
 		* appt/tests.py
+	* Manual testing
+		* If you hate yourself you can do manual testing by using the endpoints.  They are listed in the [System API section](#systemApiSec)
 
 
 
