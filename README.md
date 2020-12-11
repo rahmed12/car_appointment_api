@@ -266,6 +266,7 @@ There are no relationship
     			"appauth_id": "make up an id",
     			"appauth_secret": "make up a secret"
 			}
+			
 			```json
 			* To create token you will need this in the body:
 			```
@@ -275,7 +276,7 @@ There are no relationship
 			}
 			```
 			    
-			    Write down the token that is sent back you you
+			* Write down the token that is sent back you you
 			    
 
 		* For the rest of the endpoints you will need this in your header:
