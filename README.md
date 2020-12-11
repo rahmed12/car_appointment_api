@@ -5,7 +5,7 @@
 
 
 # Table of Contents
-* [Prerequisite: Make sure you have the follow](#Prerequisite)
+* [Prerequisite: Make sure you have the following](#Prerequisite)
 * [Technologies](#Technologies)
 * [Design](#Design)
 * [Setup](#Setup)
