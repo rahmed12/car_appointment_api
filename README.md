@@ -80,24 +80,25 @@
 
 * __4. System APIs__
 	* Generating user's credentials:
-` POST body
+	
+ POST body
 {
     "appauth_id": "",
     "appauth_secret": ""
-} `
+} 
 
 
 	* Generating Token:
-` POST body
+ POST body
 {
     "appauth_id": "",
     "appauth_secret": ""
-} `
+} 
 
 
 
 	* Create record:
-` POST body
+ POST body
 {
     "first_name": "",
     "last_name": "",
@@ -110,37 +111,41 @@
     "phone": “”
     "date": "",
     "price": ""
-} ` ` header:
-x-access-id  <user credential id>
-x-access-token  <user token> `
+} 
 
-` POST header:
+header:
+x-access-id  `<user credential id`>
+x-access-token  `<user token`> 
+
+POST header:
 x-access-id  <user credential id>
-x-access-token  <user token> `
+x-access-token  <user token> 
 
 
 	* Get all records:
-` GET
+GET
 header:
-x-access-id  <user credential id>
-x-access-token  <user token> `
+x-access-id  `<user credential id`>
+x-access-token  `<user token`> 
+
 
 	* Get one record:
-` header:
-x-access-id  <user credential id>
-x-access-token  <user token>
+ header:
+x-access-id  `<user credential id`>
+x-access-token  `<user token`>
 
-url: http://<your host>/appts/<record id> `
+url: http://`<your host`>/appts/`<record id`> 
+
 
 	* Get data range records
-`header:
-x-access-id  <user credential id>
-x-access-token  <user token>
+header:
+x-access-id  `<user credential id`>
+x-access-token  `<user token`>
 
-url: http://<your host>/appts/?startdate=<yyyy-mm-dd>&enddate=<yyyy-mm-dd>`
+url: http://`<your host`>/appts/?startdate=`<yyyy-mm-dd`>&enddate=`<yyyy-mm-dd`>
 
 	* Update one record:
-`PUT
+PUT
 body:
 {
 
@@ -148,16 +153,16 @@ body:
 }
 
 header:
-x-access-id  <user credential id>
-x-access-token  <user token>`
+x-access-id  `<user credential id`>
+x-access-token  `<user token`>
 
 	* Delete one record:
-`DELETE
+DELETE
 header:
-x-access-id  <user credential id>
-x-access-token  <user token>
+x-access-id  `<user credential id`>
+x-access-token  `<user token`>
 
-url: http://<your host>/appts/<record id>`
+url: http://`<your host`>/appts/`<record id`>
 
 
 
