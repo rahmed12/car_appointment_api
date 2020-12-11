@@ -87,6 +87,8 @@
     "appauth_secret": ""
 } 
 
+url: http://`<your host`>/appsauth/
+
 
 	* Generating Token:
  POST body
@@ -95,7 +97,7 @@
     "appauth_secret": ""
 } 
 
-
+url: http://`<your host`>/appsauth/tokens/
 
 	* Create record:
  POST body
