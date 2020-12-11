@@ -44,6 +44,145 @@
 
 ![Untitled Diagram](https://user-images.githubusercontent.com/47451663/101845077-c5958b80-3b1b-11eb-8c8f-4ed85de8baa9.png)
 
+* __1. Why do we need a car service appointment API?__
+	* We want external developers to have access to our appointment app to be able to build their own application
+
+* __2. Requirements__
+	* The application should have REST endpoints that do the following:
+ 		* Create users credential for token
+  		* Create token
+  		* Delete appointments from the database
+  		* Create new appointments
+ 		*  Update the status of an existing appointment
+  		* Retrieve a specific appointment from the database.
+  		* Retrieve all appointments that are scheduled between a date range and sorted by price.
+  		* Randomly generate appointments and store inside db
+
+
+ 	* The system highly available
+ 	* The system should update in mealtime
+ 
+
+
+* __3. Capacity Estimation and Constraints__
+	* Since this car service only has one location there is a finite amount of appointments it can take in one day.  We are going to assume 12 appointments can be made in a given day.
+
+	* We are going to assume one record takes up 400KB
+
+	* The read/write will be at a ratio of 1:1 (1 record creating: 1 record read)
+
+	* New appointment:   1 every 2 hours
+	* Retrieve appointment: 1 every 2 hours
+	* Incoming data: 12 * 400 = 4800KB per day
+	* Outgoing data: 12 * 400 = 4800KB per day
+	* Storage for 10  years: 17G
+
+
+* __4. System APIs__
+	* Generating user's credentials:
+` POST body
+{
+    "appauth_id": "",
+    "appauth_secret": ""
+} `
+
+
+	* Generating Token:
+` POST body
+{
+    "appauth_id": "",
+    "appauth_secret": ""
+} `
+
+
+
+	* Create record:
+` POST body
+{
+    "first_name": "",
+    "last_name": "",
+    "service": " ",
+    "status": "",
+    "street_address": "  ",
+    "city": "",
+    "state": "”
+     "zip": "",
+    "phone": “”
+    "date": "",
+    "price": ""
+} ` ` header:
+x-access-id  <user credential id>
+x-access-token  <user token> `
+
+` POST header:
+x-access-id  <user credential id>
+x-access-token  <user token> `
+
+
+	* Get all records:
+` GET
+header:
+x-access-id  <user credential id>
+x-access-token  <user token> `
+
+	* Get one record:
+` header:
+x-access-id  <user credential id>
+x-access-token  <user token>
+
+url: http://<your host>/appts/<record id> `
+
+	* Get data range records
+`header:
+x-access-id  <user credential id>
+x-access-token  <user token>
+
+url: http://<your host>/appts/?startdate=<yyyy-mm-dd>&enddate=<yyyy-mm-dd>`
+
+	* Update one record:
+`PUT
+body:
+{
+
+    "status": "close"
+}
+
+header:
+x-access-id  <user credential id>
+x-access-token  <user token>`
+
+	* Delete one record:
+`DELETE
+header:
+x-access-id  <user credential id>
+x-access-token  <user token>
+
+url: http://<your host>/appts/<record id>`
+
+
+
+
+* __5. Database Design__
+	* Not a lot of data to store
+	* Each object is about 400K
+There are no relationship
+		* We are assuming that the user and service tables are external to us.  Meaning we don't have knowledge of their user id and service table id and just need to store user appointments
+	* NoSQL is what we are going to use also if we ever need to scale it will be easier to do with with NoSQL
+
+
+* __6. System Design__ 
+* For incoming appointment, we are going to generate our own record id using uuid4.  We are doing this because we don't want users to be able to guess our internal ids to prevent hacking
+
+* The user will need to create their own credentials and token with the APIs we have given them.  The user's secrete id will be encrypted on our system using bcrypt.
+		* The good about this is if the database is compromised their password is safe
+
+* We create the token using uuid and if there are any old tokens for this user we will delete them.  Every 30 days, the user token will expire.  If user token has been expired they will have to generate a new token
+
+* For all the endpoints we are using the json format.  We only return json back to the client
+
+* For testing we are using Postman (and unittest).  It's better to test with postman as it is easy to test outbound/inbound 
+
+
 
 # <a name="Setup"></a>Setup
 * If you want to watch a video version of this, here is the link [![Car Serive appointment API](https://img.youtube.com/vi/VID/0.jpg)](https://youtu.be/UVpPy3DLpBs)
