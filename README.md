@@ -261,29 +261,29 @@ There are no relationship
 		* If you hate yourself you can do manual testing by using the endpoints.  They are listed in the [System API section](#systemApiSec)
 		* You can also look at the postman endpoint's header and body to see the setup
 			* For creating creds you will need this in the body:
-			```json 
+			 
 			{
     			"appauth_id": "make up an id",
     			"appauth_secret": "make up a secret"
 			}
 			
-			```json
+			
 			* To create token you will need this in the body:
-			```
+			
 			{
     			"appauth_id": "your id",
-    			"appauth_secret": "you secret"
+    			"appauth_secret": "your secret"
 			}
-			```
+			
 			    
-			* Write down the token that is sent back you you
+			* Write down the token that is sent back to you
 			    
 
 		* For the rest of the endpoints you will need this in your header:
-		```json
-		x-access-id <your id>
-		x-access-token <the token you wrote down>
-		```
+		
+		x-access-id `<your id`>
+		x-access-token `<the token you wrote down`>
+		
 		
 		
 
